@@ -18,8 +18,23 @@ Another aspect that gives Netflix a competitive advantage over other streaming p
 While other streaming services can leverage content exclusivity to attract subscribers, Netflix's library is not as deep or expansive, at least for the time being. However, Netflix's technical superiorty in UI and digital nudging gives it an indispensible competitive edge against its competitors, and must continually adjust its platforms and respond to the faults which can drive away consumers and subscribers.
 
 # Business Understanding
+Considering the strengths and weaknesses of Netflix outlined above, we need maintain our competitive edge against other streaming platforms by better understanding which aspects of our platform **frustrate our customers** and which aspects **resonate well with subscribers**.
+
+We can do so by taking a look at reviews written over the past two years (2023-2025), to ensure that our insights are timely and relevant, as there is little point in working with older criticisms that may have already been addressed. 
+
+Put another way, we seek insights pertaining to the following:
+1. **Customer Retention**, and why some users are unhappy with Netflix and may cancel their subscriptions.
+2. **Customer Acquisition**, and identify what it is that people currently appreciate about Netflix so it can inform our promotions and marketing.
+
+What this requires of us is:
+
+1. To build a **binary classification model** that can deploy Natural Language Processing (NLP), or more specifically, Sentiment Analysis on the user reviews, and use that insight to predict whether the review is positive or negative. This can be done through traditional supervised learning models, such as Logistic Regression, Random Forest Classifiers, SVM, etc.
+2. **Apply Latent Dirichlet Allocation**, or `LDA`, to both groups of positive and negative reviews to identify trends and themes that will inform the actions we take.
+
+In this way, we will be better equipped to provide solid business recommendations regarding subscriber retention as well as more effective marketing campaigns.
 
 # Data Understanding
+
 
 ## Data Preparation
 
