@@ -69,7 +69,47 @@ It will additionally be useful in this case since False Negatives are not necess
 
 Due to the slight class imbalance described above, this score would be more useful than a more general Accuracy score.
 
+### Model Selection
+We will be deploying three models:
+
+1. `Multinomial Naive Bayes` (Multinomial NB), which will serve as our baseline model. This model is relatively fast and works well with text data, though it tends to struggle with complex patterns between data.
+2. `Logistic Regression`, which is a robust choice for binary classification, as it handles correlated features well, and can balance Precision (rates of False Positives) and Recall (rates of False Negatives).
+3. `LightGBM` (LGBM), which is a powerful tree-based model that handles complex patterns effectively, and performs well with imbalanced data, though it tends to be slower than alternatives.
+
 ## Data Preparation
+### Cleaning the Dataset
+Before we can begin modeling, we need to clean our dataset through the following steps:
+
+1. Removing null values.
+2. Removing unnecessary columns.
+3. Narrowing the dataset so it contains user reviews from 2023 onwards.
+4. Fixing spelling errors in content column.
+5. Consolidating the values within the Target column (`# score`) so they are binary.
+
+### Feature Engineering
+#### Factoring in Thumbs Up counts
+The data contained in the `thumbsUpCount` column can help us determine relative significance of different user reviews: reviews with high thumbs up counts are probably more significant than reviews with 0 thumbs ups.
+
+Since the distribution of this column's values are all over the place, we scaled this column to ensure proper weight is given to reviews with more thumbs up without allowing outliers to dominate our models' performances.
+
+Since our column is heavily skewed to the right (disproportionate number of reviews with 0 thumbs up, with a few reviews having a high number of thumbs up) we will use log transformation to normalize this column in a way that does not overstate extreme outliers. Specifically, we will use **log1p()** to handle the large number of 0 counts.
+
+### Splitting the Data
+As is common practice, we split our dataset into three sets:
+1. Training set, to train our models.
+2. Validation set, to evaluate the hyperparameter tuning we perform on the models.
+3. Test set, which is unseen data that will be a final test of our models' capabilities.
+
+### Custom Transformer
+We created a custom transformer, `TextPreprocessor`, which lowercases the text, removes special characters, tokenizes the text, removes stop words, and lemmatizes the text. This transformer will be used in our pipelines to prepare our text data to be processed by the models.
+
+### Pipelines
+We prepared three pipelines, one for each model we will be deploying, to ensure systematic application of our steps and prevent data leakage.
+
+These pipelines include two main steps:
+
+1. `ColumnTransformer` that will run our TextPreprocessor on our text, vectorize that text for TF-IDF, and combine these vectors with our thumbs_up_log column to be run in the model.
+2. `Classifier` which will run our models.
 
 # Modeling
 
@@ -84,7 +124,7 @@ Due to the slight class imbalance described above, this score would be more usef
 ## Next Steps
 
 # Appendix
-### Research
+### Sources
 - [*FilmTake* — Chasing Netflix: How the Major Media Companies Stack Up in Subscribers, Revenue, and Challenges — Part One](https://www.filmtake.com/streaming/chasing-netflix-how-the-major-media-companies-stack-up-in-subscribers-revenue-and-challenges-part-one/)
 - [*Whip Media* — 2023 US Streaming Satisfaction Survey](https://whipmedia.com/wp-content/uploads/2023/09/2023-US-Streaming-Satisfaction-Study.pdf)
 - [*Variety* — From ‘Glitchy’ HBO Max to ‘Overwhelming’ Amazon Prime Video, Hollywood Insiders Spill on Their (Least) Favorite Streaming Interfaces](https://variety.com/lists/user-friendly-streaming-services-survey/)
