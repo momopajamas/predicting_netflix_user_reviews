@@ -4,7 +4,8 @@
 - **Date:** March, 2025
 
 ![image](https://github.com/momopajamas/predicting_netflix_user_reviews/blob/main/images/netflix_logo.png?raw=true)
-([Image Source](https://awolvision.com/blogs/awol-vision-blog/how-to-stream-netflix-on-your-projector))
+
+([*Image Source*](https://awolvision.com/blogs/awol-vision-blog/how-to-stream-netflix-on-your-projector))
 
 # Introduction
 ### Current State of Streaming
