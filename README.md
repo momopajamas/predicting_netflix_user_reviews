@@ -248,3 +248,10 @@ We should also consider **partnering with regional and foreign-language streamin
 - [*Journal of Information Technology Teaching Cases* — Keeping viewers hooked: Netflix’s innovative strategies for reducing churn](https://journals.sagepub.com/doi/10.1177/20438869241296895?icid=int.sj-full-text.citing-articles.1&utm_source=chatgpt.com)
 - [*Canvas Business Model* — The Competitive Landscape of Netflix](https://canvasbusinessmodel.com/blogs/competitors/netflix-competitive-landscape#:~:text=Global%20Reach:%20Netflix%20operates%20in,content%2C%20known%20as%20Netflix%20Originals.)
 ## Navigation
+- [Netflix Reviews Dataset](https://www.kaggle.com/datasets/ashishkumarak/netflix-reviews-playstore-daily-updated?resource=download)
+- [Jupyter Notebook](https://github.com/momopajamas/predicting_netflix_user_reviews/blob/main/notebook.ipynb)
+- [Non-Technical Presentation](https://github.com/momopajamas/predicting_netflix_user_reviews/blob/main/presentation.pdf)
+- [Tuned Models Folder](https://github.com/momopajamas/predicting_netflix_user_reviews/tree/main/tuned_models)
+- [Images & Visualizations](https://github.com/momopajamas/predicting_netflix_user_reviews/tree/main/images)
+- [`LDA` Documentation](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.LatentDirichletAllocation.html)
+- [*Shahid* Streaming Service (English Site)](https://shahid.mbc.net/en)
