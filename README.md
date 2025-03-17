@@ -1,5 +1,5 @@
 # **Keeping Netflix on Top** 
-### *Analyzing User Reviews to Prevent Customer Churn & Attract New Subscribers*
+### *Analyzing User Reviews to Promote Customer Retention & Acquisition*
 - **Author:** Mohammad Abou-Ghazala
 - **Date:** March, 2025
 
