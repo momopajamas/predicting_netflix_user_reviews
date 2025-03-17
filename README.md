@@ -84,4 +84,10 @@ Due to the slight class imbalance described above, this score would be more usef
 ## Next Steps
 
 # Appendix
+### Research
+- [*FilmTake* — Chasing Netflix: How the Major Media Companies Stack Up in Subscribers, Revenue, and Challenges — Part One](https://www.filmtake.com/streaming/chasing-netflix-how-the-major-media-companies-stack-up-in-subscribers-revenue-and-challenges-part-one/)
+- [*Whip Media* — 2023 US Streaming Satisfaction Survey](https://whipmedia.com/wp-content/uploads/2023/09/2023-US-Streaming-Satisfaction-Study.pdf)
+- [*Variety* — From ‘Glitchy’ HBO Max to ‘Overwhelming’ Amazon Prime Video, Hollywood Insiders Spill on Their (Least) Favorite Streaming Interfaces](https://variety.com/lists/user-friendly-streaming-services-survey/)
+- [*Journal of Information Technology Teaching Cases* — Keeping viewers hooked: Netflix’s innovative strategies for reducing churn](https://journals.sagepub.com/doi/10.1177/20438869241296895?icid=int.sj-full-text.citing-articles.1&utm_source=chatgpt.com)
+- [*Canvas Business Model* — The Competitive Landscape of Netflix](https://canvasbusinessmodel.com/blogs/competitors/netflix-competitive-landscape#:~:text=Global%20Reach:%20Netflix%20operates%20in,content%2C%20known%20as%20Netflix%20Originals.)
 ## Navigation
