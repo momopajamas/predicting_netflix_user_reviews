@@ -112,6 +112,36 @@ These pipelines include two main steps:
 2. `Classifier` which will run our models.
 
 # Modeling
+Our untuned models all performed resonable well in terms of F1 score:
+1. **MNB** (baseline) — 83%
+2. **LogReg** — 86%
+3. **LGBM** — 84%
+
+As we can see, our untuned Logistic Regression model performed best with an F1 score of 86%.
+
+## Tuning Hyperparameters
+To see if we can boost the models' performances, we attemped to tune their hyperparameters using `RandomSearchCV`.
+
+In addition to tuning the models' parameters, we also tuned parameters for the vectorizer, notably in introducing **bigrams and trigrams**, which essentially represent word pairings of two or three words as the added context can be helpful as opposed to considering each word in isolation.
+
+For convenience, we saved the tuned models using `joblib` for easy loading and to save time when this notebook is run in the future. These saved models can be accessed in the [`tuned_models` folder](https://github.com/momopajamas/predicting_netflix_user_reviews/tree/main/tuned_models) on this GitHub Repo.
+
+## Results
+Tuning the hyperparameters did not improve our models' performances by too much, between 1-2% for each model, but this is because our untuned models performed reasonably well in the first place, indicating we had hit a ceiling with how much we can improve the models performances without more substantive changes to the data and data processing.
+
+Below is a bar chart of each model's performance on the test data:
+![Bar chart](https://github.com/momopajamas/predicting_netflix_user_reviews/blob/main/images/final_results_barchart.png?raw=true)
+We can see above more strikingly that all our models performed well, with the tuned LogReg model performing the best with an 86% F1-Score on the testing data.
+
+Let's take a more detailed look at our tuned LogReg's performance:
+![Confusion Matrix](https://github.com/momopajamas/predicting_netflix_user_reviews/blob/main/images/confusion_matrix.png?raw=true)
+The top right corner shows that 10% of the negative reviews were incorrectly labeled as Positive, and 13% of the Positive reviews were incorrectly labeled as Negative.
+
+However, as you can see in the top left corner, our model was about 90% successful in predicting Negative reviews, and in the bottom right corner, we were 87% successful in predicting Positive reviews.
+
+What this tells us is we were correct in assigning weight to the Thumbs Up column and were able to account for the class imbalance relatively well, though there still is room for improvement.
+
+
 
 # Conclusion
 
