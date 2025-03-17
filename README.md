@@ -183,14 +183,62 @@ Topic 4 — Household & Sharing Restrictions: Complaints regarding new password-
 Though these are rough approximations, they indicate where we can intervene to prevent customer churn and how we can promote Netflix to gain new subscribers. Additionally, they indicate points for further investigation to flesh our strategy out in a more cohesive and in-depth way.
 
 # Conclusion
+We were able to apply our finalized model, the tuned Logistic Regression model, on our entire cleaned dataset, and used our categorizations to generate topics through applying Latent Dirichlet Allocation, or `LDA`. In so doing, we were able to gain deeper insight into the reviews and can surmise action items and next steps moving forward to further deepen this line of investigation.
 
 ## Evaluation
+Despite a class imbalance in our Target, we successfully built a tuned Logistic Regression model capable of categorizing user review sentiment as Positive or Negative with a respectable **F1 score of 86%** through Feature Engineering (namely, factoring in the significance of Thumbs-Up counts for reviews) and tuning the model's hyperparameters.
+
+This F1 score tells us that our model was successful at striking a balance between preventing both False Negatives and False Positives, which for our stated purposes are equally important as we are trying to both find action items to prevent customer churn as well as find positives to promote our platform and gain new subscribers. 
+
+After running this model on our entire cleaned dataset, we used `LDA `to approximate themes and trends across the reviews, and found the following:
+
+### Positive Themes: What Users Love
+
+*Content Quality & Variety* — Users appreciate Netflix’s series, anime, and dubbed content, particularly Hindi and other regional options.
+*User Experience* – Many users find the app's usability to be easy and smooth.
+*Favorite Features* – Users praise OTT convenience, video quality, and diverse content options.
+
+### Negative Themes: Points for Growth
+
+*Pricing & Subscription Complaints* – Users reacted negatively to high costs, payment issues, and ad-based plans and tiers.
+*Password Sharing Restrictions* – Related to the above point, many are frustrated with household-sharing limitations and extra charges.
+*App Performance Issues* – Many users complained about login errors, bugs, playback problems, and other technical issues.
+*Content Gaps* – Some users feel regional content and series availability are lacking.
 
 ## Limitations
+**Neutral Reviews** — Our modeling and analysis were limited by the fact that we chose to ignore Neutral reviews, and focus only on Positive and Negative sentiments. This decision was taken to create the most competent binary classifier possible, and the impressive results speak for themselves. However, our despite our solid insights gained, we could potentially go further by factoring in sentiments that are more mixed, as many Negative and Positive feedback can be gained by considering Neutral reviews.
+
+**Foreign Language Reviews** — In our investigation and modeling, we found a recurrence of foreign words, namely Hindi though other languages were included as well. Though this limitation did not hinder our models' abilities to classify the reviews too heavily, it did limit our ability to investigate the reviews more thoroughly, and if we were able to conduct NLP with foreign languages such as Hindi, we no doubt would have an even more robust model and analysis.
 
 ## Recommendations
+According to the insights laid out above, we recommend the following:
+
+### A) Customer Retention
+
+1. **Improving Pricing & Subscription Flexibility** — We may be able to reduce customer churn by offering more affordable regional pricing tiers, and by improving our communication on these ends.
+
+2. **Addressing Password-Sharing Concerns** — We should look into plans that are more family-friendly and reasonably flexible on the matter of multi-household use.
+
+3. **Improving Communication** — Customer dissatisfaction can be mitigated by improving our communication regarding some of the recurring issues such as pricing, subscription flexibility, and password-sharing concerns, and why these measures are deemed necessary and beneficial to the user's experience.
+
+4. **Enhancing Performance & Stability of the App** — We should prioritize addressing technical issues such as playback errors, login issues, and loading issues, and look into implementing more effective in-app error resolution tools.
+
+### B) Promotion to Gain New Subscribers
+
+1. **Expanding Regional Content** — As we seek to cement and expand our global reach, we should invest in regional series and diverse language-based content. It would be particularly strategic for us to invest in promoting popular subbed and subtitled foreign-language content more consistently and effectively.
+
+2. **Capitalizing on Netflix's Strengths in Advertisements** — Creatively blending the following aspects in a new promotional campaign:
+
+  - *Variety and quality of our content*, particularly regional content to expand our global reach.
+
+  - *Usability and technical superiority*, especially in comparison to our competitors.
 
 ## Next Steps
+These user review analysis techniques can be strengthened by **factoring in Neutral Reviews** and we recommend investing resources in developing models capable of accurately doing so.
+
+Further, we urge the company to **expand our NLP capabilities to include other languages**, in order to more effectively and consistently respond to the praise and complaints brought by our global audience.
+
+We should also consider **partnering with regional and foreign-language streaming platforms** like [Shahid](https://shahid.mbc.net/en) to push our global reach further.
 
 # Appendix
 ### Sources
